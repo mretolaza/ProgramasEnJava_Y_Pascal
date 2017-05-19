@@ -1,0 +1,40 @@
+- Tareas Informe 1-2
+
+* Ahorcado en Jscript 
+( mismas opciónes de cuarto). 
+
+- Sin archivos.  las palabras estarán en un vector ( 20 palabras ).
+- Sin límite de letras
+
+Fecha abierta.  
+
+* Totito( arrastrar las imagenes y ponerlas) 
+
+3 X y 3 O 
+- Validades. No se puede soltar en cualquier lugar
+- No se puede soltar en un espacio que ya esta utilizado 
+- Se puede mover la imagen al antojo del jugador 
+- hacer una matriz de boolean 
+- Matriz de 3X3
+
+lenguaje --> delphi 
+
+delphi 
+c++/jscript 
+C# 
+
+Fecha de entrega 
+
+
+
+
+
+
+Graficador 
+Merge de 10 
+Archivos directos (ingresar - mostrar - Sorts- Borrar y modificar) 
+Robotica 
+2 Examenes 
+Promedio de examenes de microsoft 
+Black Jack 
+

@@ -1,0 +1,168 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, CheckLst;
+
+type
+  TForm1 = class(TForm)
+    LabeledEdit1: TLabeledEdit;
+    Button1: TButton;
+    Shape11: TShape;
+    Shape15: TShape;
+    Shape12: TShape;
+    Shape14: TShape;
+    Shape13: TShape;
+    Shape16: TShape;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+  TTorre = Class
+  public
+    p,x,altura: Integer; {p= sp, x=derecha izquierda , alutura que me muevo}
+    Data: array [1..10] of Tshape;    {mi Stack pointer}
+    Constructor Makenull;
+    Procedure   Mover(a:tshape);   {Procedimiento de mover}
+    Procedure   Bajar(a:tshape);    {Procedimiento de bajar}
+    Procedure   Subir(a:tshape);     {Procedimiento de subir}
+    Procedure   Push (e:tshape);
+    Function    Pop:tshape;
+  End;
+
+var
+  Form1: TForm1;
+  n:integer;   // Variable de los números de aros.
+  T1,T2,T3:TTorre;  // torres de hanoi
+  Temp:tshape; // Para crear el anillo.
+
+implementation
+
+{$R *.dfm}
+
+Constructor TTorre.makenull;
+Begin
+   p:=0;
+End;
+
+procedure crear;
+Var
+  i:integer;
+Begin
+  IF N > 10 then
+ Begin
+    ShowMessage('Ingrese un número menor o igual a 10');
+ End Else
+ Begin
+ N:= strtoint(form1.LabeledEdit1.Text);
+    For i := n downto 1 do
+    Begin
+      Temp:=tshape.Create(form1);
+      Temp.Parent:= form1;
+      Temp.height:=25;
+      Temp.Width:=100 + 10*i;
+      randomize;
+      Temp.Brush.Color:=rgb(random(256),random(256),random(256));
+      Temp.Top:=0;
+      Temp.Left:=24+(193-Temp.Width)div 2;
+      T1.push(Temp);
+    End;
+  End;
+End;
+
+Procedure TTorre.mover(a:tshape);
+Begin
+  Repeat
+    IF a.Left < (x+(193-a.width)div 2) Then
+     a.Left:=a.Left+1
+     Else
+     a.Left:=a.Left-1;
+     sleep(2);
+     application.ProcessMessages;
+  Until a.Left=x+(193-a.width)div 2 ;
+End;
+
+Procedure TTorre.bajar(a:tshape);
+Begin
+ Repeat
+     a.top:=a.top+1;
+     sleep(2);
+     application.ProcessMessages;
+  Until a.top=369-25*p ;
+End;
+
+Procedure TTorre.subir(a: TShape);
+Begin
+  Repeat
+    a.Top:= a.Top-1;
+    sleep(2);
+    application.ProcessMessages
+  Until a.Top = 112-40 ;
+End;
+
+Procedure TTorre.push(e:tshape);
+Begin
+  IF n<=10 then
+  Begin
+    inc(p);
+    mover(e);
+    bajar(e);
+    Data [p]:=e;
+  End;
+end;
+
+Function TTorre.pop;
+var T:tshape;
+Begin
+  IF p > 0 Then
+  Begin
+    t:=Data[p];
+    subir(t);
+    pop:=t;
+    dec(p);
+  End;
+End;
+
+Procedure hanoi(n:integer; T1,T2,T3:TTorre);
+Begin
+  IF N > 1 then
+  Begin
+    Hanoi(N-1,T1,T3,T2);
+    Hanoi(1,T1,T2,T3);
+    Hanoi(N-1,T2,T1,T3);
+  End Else
+    T3.push(T1.pop);
+End;
+
+procedure TForm1.Button1Click(Sender: TObject);
+Begin
+IF LabeledEdit1.Text='' Then
+ShowMessage('Ingrese Valor')
+Else Begin
+Crear;
+Hanoi(N,T1,T2,T3);
+LabeledEdit1.Clear;
+End;
+End;
+
+procedure TForm1.FormCreate(Sender: TObject);
+Begin
+  LabeledEdit1.Clear;
+  T1:=TTorre.makenull;
+  T2:=TTorre.makenull;
+  T3:=TTorre.makenull;
+  T1.x:= 24;
+  T2.x:= 248;
+  T3.x:= 472;
+End;
+
+End.

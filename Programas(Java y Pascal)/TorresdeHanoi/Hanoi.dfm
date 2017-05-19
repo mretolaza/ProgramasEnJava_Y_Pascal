@@ -1,0 +1,58 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Torres de Hanoi '
+  ClientHeight = 412
+  ClientWidth = 513
+  Color = clWindow
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Arial Narrow'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 20
+  object Label1: TLabel
+    Left = 16
+    Top = 32
+    Width = 191
+    Height = 37
+    Caption = 'Torres de Hanoi'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'Arial Narrow'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Memo1: TMemo
+    Left = 232
+    Top = 8
+    Width = 265
+    Height = 397
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 0
+  end
+  object LabeledEdit1: TLabeledEdit
+    Left = 56
+    Top = 144
+    Width = 121
+    Height = 28
+    EditLabel.Width = 122
+    EditLabel.Height = 20
+    EditLabel.Caption = 'Ingresar valor de N. '
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 64
+    Top = 200
+    Width = 97
+    Height = 41
+    Caption = 'Ver '
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+end

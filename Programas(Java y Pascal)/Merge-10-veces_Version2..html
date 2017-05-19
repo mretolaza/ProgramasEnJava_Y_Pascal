@@ -1,0 +1,102 @@
+<html>
+	<body>
+	<h1 style="color:purple">  Merge de 10 en Jscript - Maria Mercedes Retolaza Reyna</h1>
+    <h1 style="color:blue"> Computacion C5A </h1><body  bgcolor ="$E1E4FF"> 
+	
+	
+	<p>Introduce en el siguiente espacio el limite para cada uno de los vectores.</p>
+	
+<input type="text" id="edit1" />
+<input type="button" value="Generar" onclick="Generar()" id="button1" />
+<br />
+<br />
+Vector Generado #1<div id="v1"></div>
+<br />
+Vector Generado #2<div id="v2"></div>
+<br />
+Vector Generado #3<div id="v3"></div>
+<br />
+Vector Generado #4<div id="v4"></div>
+<br />
+Vector Generado #5<div id="v5"></div>
+<br />
+Vector Generado #6<div id="v6"></div>
+<br />
+Vector Generado #7<div id="v7"></div>
+<br />
+Vector Generado #8<div id="v8"></div>
+<br />
+Vector Generado #9<div id="v9"></div>
+<br />
+Vector Generado #10<div id="v10"></div>
+<br />
+<br />
+Merge de 10 Vectores Resultado: <div id="v11"></div>
+<br/>
+<script>
+
+function Generar()  /**jiji**/ 
+
+{
+	var num=edit1.value*1;
+	var t=0; var res; var v=new Array();
+	
+	for (var i=0;i<10;i++)
+	{											/**Genera los números **/ 
+	  v[i]=new Array();
+	}
+	
+	for (var i=0;i<10;i++)
+	{	for (var j=0;j<num;j++)
+			{	t=t+(Math.floor(Math.random()*1000));	
+				v[j][i]=t;
+			}	t=0;
+	}
+	
+for (var j=1; j<=10; j++)	
+	for (var k=0;k<num;k++) 
+	    document.getElementById("v"+j).innerHTML += v[k][j-1] + " , ";    /**Escribe los números en el vector ya ordenados **/ 
+	
+var d =0;
+var pos=new Array(10);    /** con pos controlo la posición que va usando el merge **/ 
+for (var l=0;l<10;l++)
+{
+pos[l]=0;
+}
+
+
+var temp=3000000;                      //** Veo cual es el menor de los datos**// 
+for (var i=0;i<(10*num);i++)
+
+ {
+	for (var j=0;j<10;j++)
+          {		
+		  if(pos[j]<num)    //**lo comparo por que cuando sea menor a los números generados entonces lo intercambia por la temporal     
+        {			 
+			if (v[pos[j]][j]<temp)   //**remplaza  de la temporal**// 
+    {	
+    temp=v[pos[j]][j];
+	 d=j;  //**Guarda el valor de j para no perder la posición y en que número del vector esta el número menor.   
+	}
+		}  }
+	
+	   if (i==0)
+	{
+	res=temp+" , ";  
+	temp=3000000;
+	}
+	else
+	 {                               //** Doy mi respuesta**// 
+		res=res+temp+" , ";
+		temp=3000000;
+	 }
+			pos[d]=pos[d]+1;
+} 
+	
+v11.innerHTML= res;
+
+}
+</script>
+<body>
+</body>
+</html>

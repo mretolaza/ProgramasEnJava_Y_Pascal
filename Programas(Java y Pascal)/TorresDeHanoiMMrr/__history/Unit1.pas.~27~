@@ -1,0 +1,190 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, GIFImg, StdCtrls;
+
+Type
+  TForm1 = class(TForm)
+    LabeledEdit1: TLabeledEdit;
+    Button1: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+Type
+  TTorre = class
+  Public
+    Data :Array [1..10] Of TShape;
+    Base,Palo:TShape;
+    x,y,left,Sp:Integer;
+    Constructor Create(X:Integer);
+    Procedure   Mover(A:TShape);
+    Procedure   Bajar(A:TShape);
+    Procedure   Subir(A:tshape);
+    Procedure   Push (E:tshape);
+    Function    Pop:tshape;
+  End;
+
+Var
+  Form1: TForm1;
+  Num,N:Integer;
+  T1,T2,T3:TTorre;
+  XC:TShape;
+  yf,y:Integer;
+
+Implementation
+
+Constructor TTorre.Create(X: Integer);
+Begin
+ Sp:=0;
+ Left:=x;
+ Base:=TShape.Create(Form1);
+ Base.Parent:=Form1;
+ Base.Left:=X-100;
+ Base.Top:=500;
+ Base.Width:=200;
+ Base.Height:=8;
+ Base.Brush.Color:=Clpurple;
+ Base.Brush.Style:=bsSolid;
+
+ Palo:=TShape.Create(Form1);
+ Palo.Parent:=Form1;
+ Palo.Top:=200;
+ Palo.Left:=X-2;
+ Palo.Width:=8;
+ Palo.Height:=300;
+ Palo.Brush.Color:=Clpurple;
+ Palo.Brush.Style:=bsSolid;
+End;
+
+procedure TTorre.push(e:tshape);
+begin
+
+    inc(sp);
+    Data[sp]:=e;
+    Yf:= 500-Sp*50;
+    Y:=E.Top;
+    Y:=Y+5;
+    Mover(e);
+    Bajar(e);
+    While Y<yf Do
+    Begin
+      E.Top:=Y;
+      Sleep(3);
+      Application.ProcessMessages;
+    End;
+
+end;
+
+function TTorre.pop;
+var
+ t:tshape;
+Begin
+  IF sp > 0 Then
+  Begin
+    t:=Data[sp];
+    subir(t);
+    pop:=t;
+    dec(sp);
+  End;
+End;
+
+procedure CAnillos(X:Integer);
+Var
+  i,control,t:integer;
+Begin
+Val(Form1.LabeledEdit1.Text,N,Control);
+IF (Form1.LabeledEdit1.Text='') Or (Control<>0) Then
+  ShowMessage('ERROR')
+  Else Begin
+   IF Num > 10 Then
+    ShowMessage('ERROR; Debe de ser un Número menor o igual a 10')
+    Else Begin
+     For i  := N Downto 1 Do
+      Begin
+       XC:=TShape.Create(Form1);
+       XC.Parent:=Form1;
+       XC.Width:=200-X*20;
+       XC.Height:=25;
+       XC.Left:= XC.Left-100+ x*10;
+       XC.Top:= 150;
+       randomize;
+       XC.Brush.Color:=rgb(Random(256),Random(256),Random(256));
+       T1.Push(Xc);
+      End;{End For}
+      End;{end procedure}
+      End;{end control}
+End;
+
+Procedure TTorre.mover(A:Tshape);
+Begin
+Repeat
+   IF a.Left <(x+193-a.Width) Div 2  Then
+      a.Left:= a.Left+1
+      Else
+      a.Left:=a.Left-1;
+      Sleep(3);
+      Application.ProcessMessages;
+until a.Left= x+ (193-a.Width) Div 2;
+End;
+
+Procedure TTorre.Bajar(a:TShape);
+Begin
+Repeat
+  a.top:=a.top+1;
+     Sleep(3);
+     Application.ProcessMessages;
+  Until a.top=369-25*sp ;
+End;
+
+Procedure TTorre.Subir(A:TShape);
+Begin
+    repeat
+    a.Top:= a.Top-1;
+    sleep(3);
+    application.ProcessMessages
+  until a.Top = 112-40 ;
+End;
+
+
+procedure hanoi(n:integer; t1,t2,t3:TTorre);
+begin
+  IF N > 1 Then
+  begin
+    hanoi(N-1,t1,t3,t2);
+    hanoi(1,t1,t2,t3);
+    hanoi(N-1,t2,t1,t3);
+  end else
+    T3.push(T1.pop);
+end;
+
+
+{$R *.dfm}
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  CAnillos(1);
+  Hanoi(n,t1,t2,t3);
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+Var Num:Integer;
+begin
+Num:=180;
+T1:=TTorre.Create(Num);
+Num:=Num+275;
+T2:=TTorre.Create(Num);
+Num:=Num+275;
+T3:=TTorre.Create(Num);
+
+end;
+
+end.

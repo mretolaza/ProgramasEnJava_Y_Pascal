@@ -1,0 +1,52 @@
+unit Hanoi;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    LabeledEdit1: TLabeledEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+Function THanoi(NumA:Integer; T1,T2,T3:Char;);
+Begin
+   IF NumA = 1  Then
+   Form1.Memo1.Lines.Add('Mover de' + T1 + 'Hacia' + T3)
+   Else
+
+   IF NumA = NumA Then
+    THanoi(NumA-1,T1,T3,T2);
+    THanoi(1,T1,T2,T3);
+    THanoi(NumA-1,T2,T1,T3);
+End;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+LabeledEdit1.Text:=FloatToStr(THanoi(1,'Torre A','Torre B','Torre C'));
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+memo1.Lines.Clear;
+end;
+
+end.

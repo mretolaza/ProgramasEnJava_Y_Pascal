@@ -1,0 +1,127 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 
+    '                                                                ' +
+    '  Torres De Hanoi - Mar'#237'a Mercedes Retolaza Reyna C5A'
+  ClientHeight = 424
+  ClientWidth = 699
+  Color = clWindow
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Arial Narrow'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 20
+  object Shape11: TShape
+    Left = 112
+    Top = 124
+    Width = 17
+    Height = 266
+    Brush.Color = clFuchsia
+    Pen.Style = psClear
+  end
+  object Shape15: TShape
+    Left = 24
+    Top = 369
+    Width = 193
+    Height = 21
+    Brush.Color = clFuchsia
+    Pen.Style = psClear
+  end
+  object Shape12: TShape
+    Left = 336
+    Top = 124
+    Width = 17
+    Height = 266
+    Brush.Color = clPurple
+    Pen.Style = psClear
+  end
+  object Shape14: TShape
+    Left = 248
+    Top = 369
+    Width = 193
+    Height = 21
+    Brush.Color = clPurple
+    Pen.Style = psClear
+  end
+  object Shape13: TShape
+    Left = 560
+    Top = 124
+    Width = 17
+    Height = 266
+    Brush.Color = clFuchsia
+    Pen.Style = psClear
+  end
+  object Shape16: TShape
+    Left = 472
+    Top = 369
+    Width = 193
+    Height = 21
+    Brush.Color = clFuchsia
+    Pen.Style = psClear
+  end
+  object Label1: TLabel
+    Left = 223
+    Top = 357
+    Width = 17
+    Height = 33
+    Caption = #9829
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -29
+    Font.Name = 'Arial Narrow'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 447
+    Top = 357
+    Width = 17
+    Height = 33
+    Caption = #9829
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -29
+    Font.Name = 'Arial Narrow'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 288
+    Top = 23
+    Width = 289
+    Height = 57
+    Caption = 'Torres De Hanoi'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -48
+    Font.Name = 'Arial Narrow'
+    Font.Style = []
+    ParentFont = False
+  end
+  object LabeledEdit1: TLabeledEdit
+    Left = 24
+    Top = 29
+    Width = 121
+    Height = 28
+    EditLabel.Width = 118
+    EditLabel.Height = 20
+    EditLabel.Caption = 'Ingrese Anillos 1-10'
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 151
+    Top = 23
+    Width = 90
+    Height = 41
+    Caption = 'Jugar Hanoi'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+end

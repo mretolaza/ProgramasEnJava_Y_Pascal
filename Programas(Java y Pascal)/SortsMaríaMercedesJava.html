@@ -1,0 +1,98 @@
+<html>
+	
+	<h1 style="color:purple">  Sorts En Jscript - Maria Mercedes Retolaza Reyna</h1>
+    <h1 style="color:blue"> Computacion C5A </h1><body  bgcolor ="$E1E4FF"> 
+
+		<input type="button" value="  Bubble   "  style="height:55px; width:100px;   color:#D11919"  onclick="Sort(1)">
+		<br><br>
+		<input type="button" value=" Insertion "  style="height:55px; width:100px;   color:#D11919"  onclick="Sort(2)">
+		<br><br>
+		<input type="button" value="   Count   "  style="height:55px; width:100px;   color:#D11919"  onclick="Sort(3)"><br>
+		<br><br>
+		<input type="text"id="n1" style="height:60px; width:280px; font-size:20px; text-align:right" ><br>
+		<p id="inicio"> </p>
+		<h1 style="color:purple"> Respuesta de los Sorts </h1>
+		<p id="respt"> </p>
+		
+	 <script> 
+	 
+	    function Sort(x)
+			{
+				time1=new Date().getMilliseconds();
+				t1=n1.value*1;
+				if (t1>=1500)
+				{
+					v1 = [];
+					vr = [];
+					
+					for (i=0; i<t1; i++)
+					v1[i]=Math.floor(Math.random()*10000+1);
+					inicio.innerHTML=v1;
+					
+					if (x==1)				       //Sort de burbuja 
+					{
+						for (i=0; i<t1; i++)
+						{
+							for (j=0; j<t1; j++)
+							{
+								if (v1[j]<v1[j-1])
+								{
+									num=v1[j];
+									v1[j]=v1[j-1];
+									v1[j-1]=num;
+								}
+							}
+						}
+						respt.innerHTML=v1;
+					}
+					
+					
+					else if (x==2)					//Sort de inserción.  
+					{
+						for (i=1; i<t1; i++)
+						{
+							j=i;
+							while ((j>0) && (v1[j]<v1[j-1]))
+							{
+									num=v1[j-1];
+									v1[j-1]=v1[j];
+									v1[j]=num;
+									--j;
+							}
+						}
+						respt.innerHTML=v1;
+					}
+					
+					else if (x==3)				//Sort de conteo 
+					{
+						for (i=0; i<t1; i++)
+						{
+							s=0;
+							for (j=0; j<t1; j++)
+							{
+								if (v1[i]>v1[j] || (v1[i]==v1[j] && j<i))
+								{
+									s++;
+								}
+							}
+							vr[s]=v1[i];
+						}
+						respt.innerHTML=vr;
+					}
+					
+					time2=new Date().getMilliseconds();
+					
+					r=time2-time1;
+					
+					alert("Tiempo que ha pasado es >>:  "+r+" Milisegundos ");
+				}
+				else
+				
+				alert("Ingrese un Numero mayor o igual que 1500 para ver resultados.");
+			}
+		
+		
+		
+	 </script>
+	                           </body>
+</html>

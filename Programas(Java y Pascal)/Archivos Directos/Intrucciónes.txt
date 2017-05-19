@@ -1,0 +1,7 @@
+Procedimiento : Read( Ar,Re); --- Lee
+Procedimiento : Write( Ar,Re); --- Escribe
+Procedimiento : Seek(Ar, P);   ---   Busca la posición 
+Funcion : FileSize (Ar);               ---   Tamaño 
+Procedimiento FilePos(Ar);      ---   entrada y salida del archivo 
+
+CloseFile(Ar); 

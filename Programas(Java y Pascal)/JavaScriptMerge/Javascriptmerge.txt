@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<section id="textBox" contenteditable="true">
+<h1 style="color:purple">Merge En Jscript - María Mercedes Retolaza Reyna</h1>
+<p>Computación - C5"A" .</p> 
+   </section>
+   <body  bgcolor ="pink"> 
+
+ Ingrese Aquí Un Valor :  <input type="text"  id="valor" > 
+<input type="button" value="Generar Primer Vector " Onclick="calcular()"> 
+
+ Ingrese Aquí Un Valor :  <input type="text"  id="valor" > 
+<input type="button" value=" Generar Merge  " Onclick="MergeBoton()"> 
+ 
+ <center>
+  <script>
+  
+    
+	
+	
+	
+	
+ </script>
+    </body>
+</html>
+		
+		
+		

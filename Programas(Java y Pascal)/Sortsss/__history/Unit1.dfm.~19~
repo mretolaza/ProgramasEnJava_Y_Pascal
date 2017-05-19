@@ -1,0 +1,176 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Sorts - Mar'#237'a Mercedes Retolaza Reyna C5A '
+  ClientHeight = 430
+  ClientWidth = 717
+  Color = clWindow
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Century Gothic'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PrintScale = poPrintToFit
+  PixelsPerInch = 96
+  TextHeight = 21
+  object SpeedButton1: TSpeedButton
+    Left = 8
+    Top = 24
+    Width = 113
+    Height = 33
+    Caption = 'Conteo '
+    Enabled = False
+    Flat = True
+    Visible = False
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 144
+    Top = 24
+    Width = 113
+    Height = 33
+    Caption = 'Burbuja '
+    Enabled = False
+    Flat = True
+    Visible = False
+    OnClick = SpeedButton2Click
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 280
+    Top = 24
+    Width = 113
+    Height = 33
+    Caption = 'Inserci'#243'n '
+    Enabled = False
+    Flat = True
+    Visible = False
+    OnClick = SpeedButton3Click
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 126
+    Width = 212
+    Height = 21
+    Caption = 'Ingrese N'#250'mero de Casillas '
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 333
+    Width = 93
+    Height = 21
+    Caption = 'Respuesta : '
+  end
+  object Label6: TLabel
+    Left = 8
+    Top = 213
+    Width = 156
+    Height = 21
+    Caption = 'Respuesta Burbuja : '
+    Visible = False
+  end
+  object Label3: TLabel
+    Left = 370
+    Top = 327
+    Width = 148
+    Height = 19
+    Caption = 'Tiempo de los Sorts '
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -16
+    Font.Name = 'Century Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 524
+    Top = 327
+    Width = 148
+    Height = 19
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -16
+    Font.Name = 'Century Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 32
+    Top = 168
+    Width = 202
+    Height = 28
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -15
+    Font.Name = 'Century Gothic'
+    Font.Style = []
+    NumbersOnly = True
+    ParentFont = False
+    TabOrder = 0
+    OnChange = Edit1Change
+  end
+  object Button1: TButton
+    Left = 296
+    Top = 153
+    Width = 161
+    Height = 43
+    Caption = 'Generar N'#250'meros '
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Century Gothic'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    OnClick = Button1Click
+  end
+  object StringGrid1: TStringGrid
+    Left = 32
+    Top = 240
+    Width = 640
+    Height = 65
+    ColCount = 10
+    DefaultColWidth = 40
+    DefaultRowHeight = 40
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    TabOrder = 2
+  end
+  object StringGrid2: TStringGrid
+    Left = 32
+    Top = 360
+    Width = 640
+    Height = 65
+    ColCount = 10
+    DefaultColWidth = 40
+    DefaultRowHeight = 40
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    TabOrder = 3
+  end
+  object Memo1: TMemo
+    Left = 429
+    Top = 72
+    Width = 185
+    Height = 57
+    Lines.Strings = (
+      'Seleccione el Sort que '
+      'desea ejecutar.')
+    TabOrder = 4
+    Visible = False
+  end
+  object Memo2: TMemo
+    Left = 492
+    Top = 174
+    Width = 146
+    Height = 27
+    Lines.Strings = (
+      'Presione el Bot'#243'n. ')
+    TabOrder = 5
+    Visible = False
+  end
+end
