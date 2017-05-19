@@ -1,0 +1,255 @@
+<html>
+<body>
+        <h1 style= "position:relative; top:550; left:900; color:blue"> "Tic Tac Toe" :) en Jscript</h1>
+        <h1 style="position:relative;  top:550; left:720;  color:blue"> Proyectos C5A - Maria Mercedes Retolaza </h1><body  bgcolor ="$E1E4FF"> 
+		
+		<body  background='fondo3.jpg'> 
+		
+	<div><img Src="Fondo4.jpg"         Style="position:fixed;top:0px;left:00px;" id="tab"/></div>
+	
+    <div><img Width="200" Height="200" Style="position:absolute;top:15px; left:20px;" id="al1" Draggable="true" Ondrop="casosv(0,'al1')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al1';" Ondragstart="band = 0;"></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:260px;left:20px;" id="al2" Draggable="true" Ondrop="casosv(1,'al2')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al2';" Ondragstart="band = 1;" /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:475px;left:20px;" id="al3" Draggable="true" Ondrop="casosv(2,'al3')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al3';" Ondragstart="band = 2;" /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:15px; left:250px;"id="al4" Draggable="true" Ondrop="casosv(3,'al4')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al4';" Ondragstart="band = 3;" /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:260px;left:250px;"id="al5" Draggable="true" Ondrop="casosv(4,'al5')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al5';" Ondragstart="band = 4;" /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:475px;left:250px;"id="al6" Draggable="true" Ondrop="casosv(5,'al6')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al6';" Ondragstart="band = 5;" /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:15px; left:490px;"id="al7" Draggable="true" Ondrop="casosv(6,'al7')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al7';" Ondragstart="band = 6;"  /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:260px;left:490px;"id="al8" Draggable="true" Ondrop="casosv(7,'al8')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al8';" Ondragstart="band = 7;" /></div>
+    <div><img Width="200" Height="200" Style="position:absolute;top:475px;left:490px;"id="al9" Draggable="true" Ondrop="casosv(8,'al9')"  Ondragover="    dejar(event)"   Onmouseover="    mm = 'al9';" Ondragstart="band = 8;" /></div>
+    
+	<div><img Src="circulo.png" Id="circulo" Style="position:absolute;top:0px;left:800px;"            Draggable="true" Height="200" width="200" Ondragstart="a = 'circulo'; b='1';" /></div> 
+    <div><img Src="xb.png"      Id="equis"   Style="position:absolute;top:210px;left:800px;"          Draggable="true" Height="200" width="200" Ondragstart="a =  'equis';  b='2';" /></div>
+    
+<script>
+
+    var a = ''; 
+	var b = '';
+    var matriz1 =  new Array(8); 
+	var matriz2v = new Array(8);
+    var band = 0; 
+	var n = '2';
+    var cero = 0;
+    
+	for (z = 0; z < 9; z++) 
+	 {
+        matriz2v[z] = 0;
+     }
+	
+	function dejar(vdejar) 
+	 {
+        vdejar.preventDefault();
+     }
+	
+	function casosv(al,comp) 
+	   {
+        if (cero > 5) 
+		{
+            if (matriz2v[band] == 1) 
+			{
+                b = '1';
+            }
+            if (matriz2v[band] == 2) 
+			{
+                b = '2';
+            }
+        }
+		
+		 if (n == b) 
+		 {
+            if (matriz2v[al] == 0) 
+			{
+                if (b == '1') 
+				{
+                    if (cero > 5) 
+					{
+                        matriz2v[band] = 0;
+                        matriz1[band] = '';
+                       (document.getElementById(mm)).src = 'vacio.jpg';
+                    }
+					
+                    switch (comp) 					
+					{
+                        case 'al1': { matriz2v[0] = 1; matriz1[0] = a; cero++; n = '2'; }
+                            break;
+                        case 'al2': { matriz2v[1] = 1; matriz1[1] = a; cero++; n = '2'; }
+                            break;
+                        case 'al3': { matriz2v[2] = 1; matriz1[2] = a; cero++; n = '2'; }
+                            break;
+                        case 'al4': { matriz2v[3] = 1; matriz1[3] = a; cero++; n = '2'; }
+                            break;
+                        case 'al5':  {matriz2v[4] = 1; matriz1[4] = a; cero++; n = '2'; }
+                            break;
+                        case 'al6': { matriz2v[5] = 1; matriz1[5] = a; cero++; n = '2'; }
+                            break;
+                        case 'al7': { matriz2v[6] = 1; matriz1[6] = a; cero++; n = '2'; }
+                            break;
+                        case 'al8': { matriz2v[7] = 1; matriz1[7] = a; cero++; n = '2'; }
+                            break;
+                        case 'al9': { matriz2v[8] = 1; matriz1[8] = a; cero++; n = '2'; }
+                            break;
+                    }
+                    
+					(document.getElementById(comp)).src = 'circulo.png';
+                    gana();
+                }
+				
+		if (b == '2')
+		
+		            {
+					
+                    if (cero > 5) 
+					{
+                        matriz2v[band] = 0;
+                        matriz1[band] = '';
+                        (document.getElementById(mm)).src = 'vacio.png';
+                    }
+                    switch (comp)  
+					
+					{
+                        case 'al1': { matriz2v[0] = 2; matriz1[0] = a; cero++; n = '1'; }
+                            break;
+                        case 'al2': { matriz2v[1] = 2; matriz1[1] = a; cero++; n = '1'; }
+                            break;
+                        case 'al3': { matriz2v[2] = 2; matriz1[2] = a; cero++; n = '1'; }
+                            break;
+                        case 'al4': { matriz2v[3] = 2; matriz1[3] = a; cero++; n = '1'; }
+                            break;
+                        case 'al5': { matriz2v[4] = 2; matriz1[4] = a; cero++; n = '1'; }
+                            break;
+                        case 'al6': { matriz2v[5] = 2; matriz1[5] = a; cero++; n = '1'; }
+                            break;
+                        case 'al7': { matriz2v[6] = 2; matriz1[6] = a; cero++; n = '1'; }
+                            break;
+                        case 'al8': { matriz2v[7] = 2; matriz1[7] = a; cero++; n = '1'; }
+                            break;
+                        case 'al9': { matriz2v[8] = 2; matriz1[8] = a; cero++; n = '1'; }
+                            break;
+                    }
+                    (document.getElementById(comp)).src = 'xb.png';
+                    gana();
+                }
+            }
+			
+        }  else { alert('Espere el cambio de turno para jugar jijijijiji'); event.preventDefault(); };
+        
+		if (cero > 5) 
+		{
+            equis.src    = 'vacio.jpg';
+            circulo.src  = 'vacio.jpg';
+            equis1.src   = 'vacio.jpg';
+            circulo1.src = 'vacio.jpg';
+            equis2.src   = 'vacio.jpg';
+            circulo2.src = 'vacio.jpg';
+        }
+    }
+	
+	function gana() 
+	{
+        if (matriz2v[3] == 2 && matriz2v[6] == 2 && matriz2v[0] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[3] == 1 && matriz2v[6] == 1 && matriz2v[0] == 1)
+            { alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[4] == 2 && matriz2v[7] == 2 && matriz2v[1] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[4] == 1 && matriz2v[7] == 1 && matriz2v[1] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[5] == 2 && matriz2v[2] == 2 && matriz2v[8]  == 2) 
+		{
+            alert('Felicidas ha gananado ->  X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[5] == 1 && matriz2v[2] == 1 && matriz2v[8] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[2] == 2 && matriz2v[1] == 2 && matriz2v[0] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[2] == 1 && matriz2v[1] == 1 && matriz2v[0] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[4] == 2 && matriz2v[5] == 2 && matriz2v[3] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[4] == 1 && matriz2v[5] == 1 && matriz2v[3] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[8] == 2 && matriz2v[6] == 2 && matriz2v[7] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[8] == 1 && matriz2v[6] == 1 && matriz2v[7] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[8] == 2 && matriz2v[4] == 2 && matriz2v[0] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[8] == 1 && matriz2v[4] == 1 && matriz2v[0] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+        if (matriz2v[4] == 2 && matriz2v[2] == 2 && matriz2v[6] == 2) 
+		{
+            alert('Felicidas ha gananado -> X');
+            event.preventDefault();
+            location.reload();
+        }
+        else
+            if (matriz2v[2] == 1 && matriz2v[4] == 1 && matriz2v[6] == 1)
+            {
+                alert('Felicidas ha gananado -> O');
+                location.reload();
+                event.preventDefault();
+            }
+    }
+
+</script>               
+</body>
+</html>
